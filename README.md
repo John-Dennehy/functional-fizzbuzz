@@ -1,5 +1,5 @@
 # Functional Fizzbuzz
-My attempt at creating fizzbuzz in javascript, while using functional programming and TDD. Feedback on how to improve my approach is welcome!
+My attempt at creating fizzbuzz in modern javascript (ES6+), while using functional programming and TDD. Feedback on how to improve my approach is welcome!
 
 ## Initial Setup
 
