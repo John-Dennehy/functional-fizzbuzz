@@ -1,4 +1,6 @@
-export const fizzbuzz = number => number
+export const fizzbuzz = number => {
+  return fizz(number)
+}
 
 export const fizz = number => {
   if (number === 3) return 'fizz'
