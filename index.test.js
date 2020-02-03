@@ -1,4 +1,4 @@
-import { fizzbuzz, fizz } from './index.js'
+import { fizzbuzz, isFizz, isBuzz } from './index.js'
 
 describe('fizzbuzz', () => {
   it('returns the number passed to it, if not a multiple of 3 or 5', () => {
@@ -7,11 +7,20 @@ describe('fizzbuzz', () => {
   });
 });
 
-describe('fizz', () => {
-  it('should return fizz if passed a multiple of 3', () => {
-    expect(fizz(3)).toBe('fizz')
+describe('isFizz', () => {
+  it('should return true if passed a multiple of 3', () => {
+    expect(isFizz(3)).toBe(true)
   });
-  it('should return the number if it is not a multiple of 3', () => {
-    expect(fizz(2)).toBe(2)
+  it('should return false if it is not a multiple of 3', () => {
+    expect(isFizz(2)).toBe(false)
+  });
+});
+
+describe('isBuzz', () => {
+  it('should return true if passed a multiple of 5', () => {
+    expect(isBuzz(5)).toBe(true)
+  });
+  it('should return false if it is not a multiple of 5', () => {
+    expect(isBuzz(3)).toBe(false)
   });
 });
