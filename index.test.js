@@ -9,13 +9,30 @@ describe('fizzbuzz', () => {
     expect(fizzbuzz(5)).not.toBe(5)
     expect(fizzbuzz(15)).not.toBe(15)
   });
-  it('returns fizz if passed a multiple of 3', () => {
-    expect(fizzbuzz(3)).toBe('fizz')
-    expect(fizzbuzz(6)).toBe('fizz')
-    expect(fizzbuzz(9)).toBe('fizz')
-    expect(fizzbuzz(1)).not.toBe('fizz')
-    expect(fizzbuzz(5)).not.toBe('fizz')
-    expect(fizzbuzz(0)).not.toBe('fizz')
+  it("return value contains 'fizz' only if passed a multiple of 3", () => {
+    expect(fizzbuzz(3)).toContain('fizz')
+    expect(fizzbuzz(6)).toContain('fizz')
+    expect(fizzbuzz(9)).toContain('fizz')
+    expect(fizzbuzz(15)).toContain('fizz')
+    expect(fizzbuzz(1)).not.toContain('fizz')
+    expect(fizzbuzz(5)).not.toContain('fizz')
+    expect(fizzbuzz(0)).not.toContain('fizz')
+  });
+  it("return value contains 'buzz' only if passed a multiple of 5", () => {
+    expect(fizzbuzz(5)).toContain('buzz')
+    expect(fizzbuzz(10)).toContain('buzz')
+    expect(fizzbuzz(15)).toContain('buzz')
+    expect(fizzbuzz(1)).not.toContain('buzz')
+    expect(fizzbuzz(3)).not.toContain('buzz')
+    expect(fizzbuzz(0)).not.toContain('buzz')
+  });
+  it('returns fizzbuzz only if passed a multiple of 15', () => {
+    expect(fizzbuzz(15)).toContain('fizzbuzz')
+    expect(fizzbuzz(30)).toContain('fizzbuzz')
+    expect(fizzbuzz(1)).not.toContain('fizzbuzz')
+    expect(fizzbuzz(3)).not.toContain('fizzbuzz')
+    expect(fizzbuzz(5)).not.toContain('fizzbuzz')
+    expect(fizzbuzz(0)).not.toContain('fizzbuzz')
   });
 });
 
