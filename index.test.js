@@ -2,7 +2,6 @@ import { fizzbuzz, isFizz, isBuzz } from './index.js'
 
 describe('fizzbuzz', () => {
   it('returns the number passed to it, if not a multiple of 3 or 5', () => {
-    // expect(fizzbuzz(0)).toBe(0)  // What should this be?
     expect(fizzbuzz(1)).toBe(1)
     expect(fizzbuzz(2)).toBe(2)
     expect(fizzbuzz(3)).not.toBe(3)
@@ -17,7 +16,6 @@ describe('fizzbuzz', () => {
     expect(fizzbuzz(15)).toContain('fizz')
     expect(fizzbuzz(1)).not.toContain('fizz')
     expect(fizzbuzz(5)).not.toContain('fizz')
-    expect(fizzbuzz(0)).not.toContain('fizz')
   });
   it("return value contains 'buzz' only if passed a multiple of 5", () => {
     expect(fizzbuzz(5)).toContain('buzz')
@@ -25,7 +23,6 @@ describe('fizzbuzz', () => {
     expect(fizzbuzz(15)).toContain('buzz')
     expect(fizzbuzz(1)).not.toContain('buzz')
     expect(fizzbuzz(3)).not.toContain('buzz')
-    expect(fizzbuzz(0)).not.toContain('buzz')
   });
   it('returns fizzbuzz only if passed a multiple of 15', () => {
     expect(fizzbuzz(15)).toContain('fizzbuzz')
@@ -33,7 +30,6 @@ describe('fizzbuzz', () => {
     expect(fizzbuzz(1)).not.toContain('fizzbuzz')
     expect(fizzbuzz(3)).not.toContain('fizzbuzz')
     expect(fizzbuzz(5)).not.toContain('fizzbuzz')
-    expect(fizzbuzz(0)).not.toContain('fizzbuzz')
   });
 });
 
