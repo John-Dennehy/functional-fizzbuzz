@@ -1,24 +1,14 @@
-export const fizzbuzz = number => {
-  if (!isValidNumber(number)) return 'Invalid number'
-  if (isFizzBuzz(number)) return 'fizzbuzz'
-  if (isFizz(number)) return 'fizz'
-  if (isBuzz(number)) return 'buzz'
-  return number
+export const fizzbuzz = num => {
+  if (isLessThanOne(num)) return 'Invalid number'
+  if (isFizzBuzz(num)) return 'fizzbuzz'
+  if (isFizz(num)) return 'fizz'
+  if (isBuzz(num)) return 'buzz'
+  return num
 }
+const isLessThanOne = num => num < 1
 
-const isFizzBuzz = number => {
-  return (isFizz(number) && isBuzz(number))
-}
+const isFizzBuzz = num => isFizz(num) && isBuzz(num)
 
-export const isFizz = number => {
-  return (number % 3 === 0)
-}
+export const isFizz = num => num % 3 === 0
 
-export const isBuzz = number => {
-  return (number % 5 === 0)
-}
-
-const isValidNumber = number => {
-  if (number < 1) return false
-  return true
-}
+export const isBuzz = num => num % 5 === 0
