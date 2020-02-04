@@ -36,6 +36,7 @@ describe('fizzbuzz', () => {
 describe('isFizz', () => {
   it('should return true if passed a multiple of 3', () => {
     expect(isFizz(3)).toBe(true)
+    expect(isFizz(6)).toBe(true)
   });
   it('should return false if it is not a multiple of 3', () => {
     expect(isFizz(2)).toBe(false)
@@ -45,6 +46,7 @@ describe('isFizz', () => {
 describe('isBuzz', () => {
   it('should return true if passed a multiple of 5', () => {
     expect(isBuzz(5)).toBe(true)
+    expect(isBuzz(10)).toBe(true)
   });
   it('should return false if it is not a multiple of 5', () => {
     expect(isBuzz(3)).toBe(false)

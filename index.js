@@ -6,5 +6,7 @@ export const fizzbuzz = num => {
   return num
 }
 
-export const isFizz = num => num % 3 === 0
-export const isBuzz = num => num % 5 === 0
+const isMultipleOf = multiple => num => num % multiple === 0
+export const isFizz = isMultipleOf(3)
+export const isBuzz = isMultipleOf(5)
+
