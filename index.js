@@ -1,12 +1,17 @@
 export const fizzbuzz = num => {
   if (isNaN(num)) return 'Invalid Number'
-  if (isFizz(num) && isBuzz(num)) return 'fizzbuzz'
-  if (isFizz(num)) return 'fizz'
-  if (isBuzz(num)) return 'buzz'
-  return num
+  let output = ''
+  output += addFizz(num)
+  output += addBuzz(num)
+  if (output === '') output = num
+  return output
 }
 
 const isMultipleOf = multiple => num => num % multiple === 0
-export const isFizz = isMultipleOf(3)
-export const isBuzz = isMultipleOf(5)
+const outputIfMatching = criteria => returnString => num => {
+  if (criteria(num)) return returnString
+  return ''
+}
 
+const addFizz = outputIfMatching(isMultipleOf(3))('fizz')
+const addBuzz = outputIfMatching(isMultipleOf(5))('buzz')
